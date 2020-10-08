@@ -1,0 +1,32 @@
+CREATE TABLE AUTHOR
+(
+    ID          INTEGER PRIMARY KEY,
+    NAME        VARCHAR(20),
+    DETAILS     VARCHAR(20)
+);
+
+COMMIT;
+
+CREATE TABLE PUBLISHER
+(
+    ID          INTEGER PRIMARY KEY,
+    NAME        VARCHAR(20),
+    DETAILS     VARCHAR(20)
+);
+
+CREATE TABLE BOOK
+(
+    ID              INTEGER PRIMARY KEY,
+    NAME            VARCHAR(20),
+    SUBNAME         VARCHAR(20),
+    SERIAL_NAME      VARCHAR(20),
+    ISBN            INTEGER,
+    DETAILS         VARCHAR(20),
+    AUTHOR_ID        INTEGER REFERENCES AUTHOR(ID),
+    PUBLISHER_ID     INTEGER REFERENCES PUBLISHER(ID)
+);
+
+COMMIT;
+
+INSERT INTO AUTHOR values (1,"Kerem", "Doğanyiğit", "Saglam char");
+commit;
