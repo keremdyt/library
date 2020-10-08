@@ -1,10 +1,8 @@
 package doganyigit.kerem.library.controller;
 
-import doganyigit.kerem.library.model.Author;
 import doganyigit.kerem.library.model.Publisher;
 import doganyigit.kerem.library.repository.PublisherRepository;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
