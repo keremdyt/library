@@ -35,7 +35,6 @@ public class AuthorController {
 
     @RequestMapping(value = "{name}", method = RequestMethod.DELETE)
     public void delete(@PathVariable String name) {
-        //Also need to check for children records before deleting
         authorRepository.deleteById(name);
     }
 
@@ -45,21 +44,4 @@ public class AuthorController {
         BeanUtils.copyProperties(author, existingAuthor, "name");
         authorRepository.saveAndFlush(existingAuthor);
     }
-
-
-
-
-    //Uygulama özellikleri:
-    //        * Yazar Tanımı yapılabilmeli ( Yazar Adı, Açıklama )
-    //        * Yayın Evi Tanımı yapılabilmeli ( Yayın Evi Adı, Açıklama )
-    //        * Kitap tanıtımı yapılabilmeli ( kitap adı, kitap alt adı, kitap seri
-    // adı, yazar, yayın evi, isbn numarası, açıklama )
-    //        * Bir Yazar için n tane kitap tanımlanabilmeli
-    //        * Bir Yayın evi için n tane kitap tanımlanabilmeli
-    //        * Kitap adı, Seri adı, Yazar ya da ISBN ile arama yapılabilmeli
-    //        * Var olan bir kayıt üzerinde değişiklik yapılabilmeli
-    //        * Var olan kayıtlar incelebilmeli
-    //        * Var olan bir kayıt silinebilmeli
-
-
 }

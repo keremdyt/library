@@ -36,7 +36,6 @@ public class PublisherController {
 
     @RequestMapping(value = "{name}", method = RequestMethod.DELETE)
     public void delete(@PathVariable String name) {
-        //Also need to check for children records before deleting
         publisherRepository.deleteById(name);
     }
 

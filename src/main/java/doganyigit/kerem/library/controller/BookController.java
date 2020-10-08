@@ -53,7 +53,6 @@ public class BookController {
 
     @RequestMapping(value = "{isbn}", method = RequestMethod.DELETE)
     public void delete(@PathVariable int isbn) {
-        //Also need to check for children records before deleting
         bookRepository.deleteById(isbn);
     }
 
